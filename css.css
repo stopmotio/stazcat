@@ -1,0 +1,444 @@
+body {
+  margin:0;
+  padding:0;
+  background-color:white;
+}
+
+p {
+  font-family:sans-serif;
+  text-indent:20px;
+  text-align:center;
+}
+
+img {
+  width:90%;
+}
+
+.displayimg {
+  height:50vh;
+  width:auto;
+  margin-right:auto;
+  margin-left:auto;
+  display:block;
+  overflow:contain;
+}
+
+/*Custom topbar for desktop*/
+.brandednav {
+  position:fixed;
+  background-color:lime;
+  top:0;
+  width:100vw;
+  height:50px;
+  display:flex;
+}
+.navimg {
+  height:100%;
+  overflow:contain;
+  width:auto;
+}
+
+.navlink {
+  display:inline-block;
+  background-color:white;
+  color:black;
+  font-family:sans-serif;
+  text-decoration:none;
+  text-align:center;
+  padding:12px;
+  box-sizing:border-box;
+  border-left:1px solid gray;
+  border-right:1px solid gray;
+  /*animate back*/
+  transition-duration:1.1s;
+}
+
+.navlink:visited {
+  color:black;
+  /*NO.*/
+}
+
+.navlink:hover {
+  transition-duration:1s;
+  padding-right:30%;
+}
+
+@media screen and (min-width: 600px) {
+  /*Then we deliver the desktop stylesheet navbar*/
+  /* Except, we don't.
+  .nav {
+    position:fixed;
+    transition-duration:0.5s;
+    width:100%;
+    margin:0;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(20, 255, 20,1) 0%, rgba(15, 184, 15,1) 100%);
+    height:30px;
+  }
+  
+  .nav:hover {
+    transition-duration:0.5s;
+    padding:5px;
+  }
+  .nav-mobile-open {
+    display:none;
+  }
+
+  .nav-plist {
+    display:flex;
+  }
+
+  .nav-page {
+    transition-duration:0.5s;
+    text-decoration:none;
+    color:white;
+    padding:5px;
+    display:inline-block;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .nav-page:visited {
+    color:white;
+  }
+
+  .nav-page:hover {
+    transition-duration:0.5s;
+    color:blue;
+    font-size:20px;
+  }*/
+  /*Instead...*/
+  .nav {
+    display:none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /*Then we deliver the mobile nav button*/
+  /*TODO: looks very empty with >3-4 pages, which we may not end up with.
+  Current progress: made slightly smaller to cope, still odd at 1 but if it only has 1 we can remove it.*/
+  .nav {
+    position:fixed;
+    display:block;
+    bottom:0;
+    height:50px;
+    width:50px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .nav-mobile-open {
+    background: #0aff0a;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100%;
+    color:white;
+    font-size:30px;
+    border:0;
+    border-radius:10px;
+  }
+  .nav-plist {
+    display:none; /*FLEX for ON, NONE for OFF*/
+    position:fixed;
+    /*padding-top:50px; /*Fix for when there are more than 5 links, but breaks when it actually fits*/
+    width:100%;
+    box-sizing:border-box;
+    height:50vw;
+    bottom:50px;
+    background: rgb(0,0,0);
+    background: linear-gradient(30deg, rgba(20, 255, 20,1) 0%, rgba(15, 184, 15,1) 100%);
+    left:0;
+    border-radius:30px;
+    overflow:scroll;
+    /*Flexbox ordering*/
+    flex-flow:column nowrap;
+    justify-content: space-around;
+  }
+  .nav-page {
+    background-color:rgba(255,255,255,0.2);
+    display:block;
+    margin:1%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:70px;
+    width:95%;
+    color:white;
+    box-sizing:border-box;
+    text-decoration:none;
+    font-family: 'Ubuntu', sans-serif;
+    text-align:center;
+    padding:5%;
+  }
+  .nav-page:visited {
+    color:white;
+  }
+  /*In addition, let's remove the top bar since it doesn't work here*/
+  .brandednav {
+    display:none;
+  }
+}
+
+ul {
+  font-family:sans-serif;
+  color:white;
+}
+.centerthetext {
+  text-align:center;
+  text-indent:0; /*Reset it if the class is formatted that way*/
+}
+a:visited {
+  color:green;
+  /*Purple is nigh impossible to see on the dark background*/
+}
+h1 {
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
+  /*Font from https://fonts.google.com/specimen/Montserrat*/
+  text-align:center;
+  text-shadow:1px 1px 10px white;
+}
+
+h2 {
+  font-family: 'Roboto Mono', monospace;
+  /*color:black;*/
+  text-align:center;
+}
+
+.para-header {
+  padding-top:25vh;
+  text-shadow:1px 1px 5px black;
+  color:white;
+}
+/*Parallax*/
+
+.parallax-img {
+  background-image: url("sorse.png");
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-noimg {
+  background:#4fff4f;
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.button {
+  display:block;
+  text-align:center;
+  background: rgb(0,0,0);
+  background: linear-gradient(291deg, rgba(0,0,0,1) 19%, rgba(37,0,135,1) 100%);
+  width:min(35%, 300px);
+  margin-left:auto;
+  box-sizing:border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-size:20px;
+  margin-right:auto;
+  padding: min(2.5%, 30px);
+  border-radius:100px;
+  color:white;
+  text-decoration:none;
+  transition-duration:0.5s;
+}
+
+.button:hover {
+  transition-duration:0.5s;
+  border-radius:20px;
+}
+
+.button:focus-visible {
+  /*Fill the focus thing when tabbed on*/
+  transition-duration:0.5s;
+  border-radius:0px;
+  /*FF may be different, but it's still good looking on both*/
+}
+
+a.button:visited {
+  color:white; /*Override visited link color*/
+}
+
+.main {
+  margin:5%;
+}
+
+footer {
+  padding:5%; /*Needs padding because it has color*/
+  background-color:#000025;
+  text-align:center;
+  color:white;
+  padding-bottom:50px; /*Scroll "docker" space that holds the menu button at the bottom for mobile. Looks decent on desktop too.*/
+}
+
+
+.socialicon {
+  transition-duration:1s;
+  background-color:gray;
+  display:inline-block;
+  padding:1%;
+  border-radius:25px;
+  width:125px;
+  height:125px;
+}
+
+.socialicon:hover {
+  transition-duration:1s;
+  border-radius:75px;
+  padding:0%;
+  margin:1%;
+  background-color:transparent;
+}
+
+.socialicon:focus-visible {
+  transition-duration:0.5s;
+  /*Reset stuff*/
+  border-radius:0px; /*Except sharp corners :)*/
+  padding:1%;
+  margin:0%;
+  background-color:white;
+}
+
+
+.socialdisplay {
+  text-align:center;
+}
+
+.iggrid {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:center;
+}
+
+.igimg {
+  border-radius:15px;
+  border-color:navy; /*Avoid transitioning from default*/
+  max-width:256px;
+  box-sizing:border-box;
+}
+
+button.nostyle { /*Fix some fringe issues with HTML buttons, mostly on the ig bit*/
+  border:0 solid black;
+  background-color:transparent;
+}
+
+.igimg:hover {
+  transition-duration:1s;
+  border: 10px solid navy;
+}
+
+.ighiddenpopup {
+  display:none;
+  position:fixed;
+  top:0;
+  margin:10%;
+  width:70vw;
+  margin-top:30vh;
+  background-color:#17202A;
+  padding:5%;
+  border: 2px solid #283747;
+  border-radius:15px;
+}
+
+.cornerbtn-close {
+  position:absolute;
+  top:0;
+  right:0;
+  background-image: url(img/Closebtn.png);
+  background-size:contain;
+  background-color:transparent;
+  border:0;
+  width:30px;
+  height:30px
+}
+
+.fillContainer {
+  width:100%;
+}
+
+.demoimg {
+  transition-duration:1s;
+  float:left;
+  width:30%;
+  height:auto;
+  max-height:35vh;
+  object-fit:contain;
+}
+
+.demoimg:hover {
+  transition-duration:1s;
+  width:50vw;
+  max-height:60vh;
+}
+
+/*Demoimgright removed because it was better to use inline CSS to do that.*/
+
+.ibutton {
+  display:inline-block; /*needed to change this so i made an entirely new class*/
+  text-align:center;
+  background: rgb(0,0,0);
+  background: linear-gradient(291deg, rgba(0,0,0,1) 19%, rgba(37,0,135,1) 100%);
+  font-family: 'Ubuntu', sans-serif;
+  font-size:20px;
+  width:max(25vw,150px);
+  padding:2.5%;
+  border-radius:100px;
+  color:white;
+  text-decoration:none;
+  transition-duration:0.5s;
+}
+.ibutton:hover {
+  transition-duration:0.5s;
+  border-radius:20px;
+}
+
+.ibutton:focus-visible {
+  /*Fill the focus thing when tabbed on*/
+  transition-duration:0.5s;
+  border-radius:0px;
+}
+a:visited.ibutton  {
+  color:white; /*Force disable custom visited color*/
+}
+.ibutton-triplet {
+  display:inline-block;
+  background: rgb(0,0,0);
+background: linear-gradient(291deg, rgba(0,0,0,1) 19%, rgba(37,0,135,1) 100%);
+  font-family: 'Ubuntu', sans-serif;
+  font-size:20px;
+  width: max(15vw, 100px);
+  text-align:center;
+  padding:2.5%;
+  border-radius:100px;
+  color:white;
+  text-decoration:none;
+transition-duration:0.5s;
+}
+.ibutton-triplet:hover {
+  transition-duration:0.5s;
+  border-radius:20px;
+}
+
+.ibutton-triplet:focus-visible {
+  transition-duration:0.5s;
+  border-radius:0px;
+}
+a:visited.ibutton-triplet {
+  color:white;
+}
+
+.buttondiv {
+  display:flex; /*Without flex, it looked weird.*/
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  flex-direction:row;
+  justify-content:space-around;
+}
