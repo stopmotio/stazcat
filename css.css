@@ -240,10 +240,10 @@ h2 {
 /*Parallax*/
 
 .parallax-img {
-  background-image: url("sorse.png");
+  background-image: url("ultracolorized.jpg");
   height: 50vh;
   background-attachment: fixed;
-  background-position: left;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
